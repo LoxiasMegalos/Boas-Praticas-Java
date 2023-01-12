@@ -1,0 +1,12 @@
+Aplicando o SOLID
+
+Classe Funcionario - representar o conceito de um funcionario no dominio da aplicação
+- Regra de negócio no reajuste salarial 
+- Vaidação realizada na própria classe de funcionário que poderia estar separado - aumentando a coesão
+- Refatoração para adicionar um serviço responsável por garantir uma funcionalidade extraída de um classe
+
+Single Responsibility Principle - Uma classe deveria ter apenas um único motivo para mudar.
+- Adições a funcionalidades do código não devem ser motivo de alterar funcionário
+- coesão no código garante que uma classe só será modificada quando houver uma necessidade de alterar sua representação.
+- ReajusteService passará a ser modificada sempre que uma nova regra de negócio entrar em vigor
+- coesão pode acarretar na perda de encapsulamento
