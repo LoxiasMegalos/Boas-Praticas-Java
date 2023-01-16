@@ -1,7 +1,7 @@
 package project.service.reajuste;
 
-import project.Funcionario;
-import project.ValidacaoException;
+import project.model.Funcionario;
+import project.model.ValidacaoException;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

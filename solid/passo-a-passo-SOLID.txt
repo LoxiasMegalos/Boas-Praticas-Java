@@ -60,3 +60,13 @@ Promover um funcionario - nova funcionalidade no sistema
 - classe PromocaoService
 - com a regra de negocio, impedir que o gerente seja promovido
 - a promoção estando ok, avaliar qual será o proximo cargo e alterar
+- avaliar funcionarios terceiros - classe Terceirizado - extends Funcionario
+	- Herança embora permita o reaproveitamento de código - garante premissas do pertencimento de uma classe - é um
+	- A Herança toda faz sentido? No projeto, terceiros poderiam ser promovidos e ter seus salarios ajustados - falha
+	- Soluções: Reescrever em terceirizado os metodos de promover e reajustar salario, nao fazendo nada ou lançando exception
+	- Utilizar Composição ao invés de herança
+
+Princípio de Substituição de Liskov - ao utilizar herança, embora 2 abstrações sejam semelhantes elas podem não ser dependentes
+- Q(x) é uma propriedade dos objetos x de T
+- Ao utilizar herança e certos métodos não fizerem sentido na classe herdada - princípio de Liskov estaria sendo ferido - aplicação inconsistente
+- Em java - priorizar a composição

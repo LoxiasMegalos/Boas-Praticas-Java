@@ -1,7 +1,6 @@
-package mirror.service;
+package mirror.service.promocao;
 
 import mirror.Funcionario;
-import mirror.ValidacaoException;
 
 import java.math.BigDecimal;
 import java.util.List;

@@ -1,5 +1,9 @@
 package project;
 
+import project.model.Cargo;
+import project.model.Funcionario;
+import project.model.GerenciaFuncionarios;
+
 import java.math.BigDecimal;
 
 public class Main {

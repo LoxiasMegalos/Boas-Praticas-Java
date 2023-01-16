@@ -1,47 +1,48 @@
 package mirror;
 
+
+import mirror.model.DadosPessoais;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 
 public class Funcionario {
 
-    private String nome;
-    private String cpf;
 
-    private Cargo cargo;
-    private BigDecimal salario;
+    private DadosPessoais dadosPessoais;
     private LocalDate dataReajuste;
 
     public Funcionario(String nome, String cpf, Cargo cargo, BigDecimal salario){
-        this.nome = nome;
-        this.cpf = cpf;
-        this.cargo = cargo;
-        this.salario = salario;
+        this.dadosPessoais = new DadosPessoais(nome, cpf, cargo, salario);
     }
 
     public void reajustaSalario(BigDecimal aumento){
-        this.salario = aumento;
+        dadosPessoais.setSalario(aumento);
         this.dataReajuste = LocalDate.now();
     }
 
     public BigDecimal getSalario() {
-        return salario;
+        return dadosPessoais.getSalario();
     }
 
     public String getCpf() {
-        return cpf;
+        return dadosPessoais.getCpf();
     }
 
     public String getNome() {
-        return nome;
+        return dadosPessoais.getNome();
     }
 
     public Cargo getCargo() {
-        return cargo;
+        return dadosPessoais.getCargo();
     }
 
     public LocalDate getDataReajuste() {
         return dataReajuste;
+    }
+
+    public void promove(Cargo novoCargo){
+        this.dadosPessoais.setCargo(novoCargo);
     }
 }

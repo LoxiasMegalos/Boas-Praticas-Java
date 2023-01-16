@@ -1,4 +1,4 @@
-package mirror.service;
+package mirror.service.promocao;
 
 import mirror.Funcionario;
 

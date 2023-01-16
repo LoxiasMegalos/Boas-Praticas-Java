@@ -1,9 +1,9 @@
 package project.service.promocao;
 
 
-import project.Cargo;
-import project.Funcionario;
-import project.ValidacaoException;
+import project.model.Cargo;
+import project.model.Funcionario;
+import project.model.ValidacaoException;
 
 public class PromocaoService {
 

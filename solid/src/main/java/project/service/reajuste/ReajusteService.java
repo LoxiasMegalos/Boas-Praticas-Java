@@ -1,6 +1,6 @@
 package project.service.reajuste;
 
-import project.Funcionario;
+import project.model.Funcionario;
 
 import java.math.BigDecimal;
 import java.util.List;
