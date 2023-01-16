@@ -70,3 +70,27 @@ Princípio de Substituição de Liskov - ao utilizar herança, embora 2 abstraç
 - Q(x) é uma propriedade dos objetos x de T
 - Ao utilizar herança e certos métodos não fizerem sentido na classe herdada - princípio de Liskov estaria sendo ferido - aplicação inconsistente
 - Em java - priorizar a composição
+
+D - Inversão de dependência
+Reajuste Service -> 2 validações feitas através de um lambda
+Acoplamento com uma interface de validações - nova validação? Criar apenas uma nova classe implementando a interface
+Establidade do código a partir da dependencia com interfaces - estáticas - pouca ou nenhuma mudança com o desenvolvimento do código
+
+Lampada - não é diretamente na tomada - utilização de outros equipamentos
+* Abstrações não devem depender de uma implementação
+* Implementações devem depender de abstrações
+
+Letra O - acaba carregando os principios S e D, SOD
+
+I - Interface Segregation Principle 
+Varias classes implementam uma interface única 
+Uma classe não deveria ser forçada a depender de métodos que não utilizará
+* Criar mais interfaces
+* Fazer com que uma interface mais específica herde de uma interface mais genérica
+
+Single Responsibility Principle - código na classe apenas que será necessário
+Open Closed Principle - limitar modificações a regras de negócio - classes devem estar prontas para serem estendidas
+Liskov Substitution Principle - Avaliar sempre a necessidade de composição ao invés de herança
+Interface Segregation Principle - Interfaces bem planejadas para evitar métodos sem utilidade
+Dependency Inversion Principle - fazer com que as abstrações não dependam de implementações e sim o contrário
+
