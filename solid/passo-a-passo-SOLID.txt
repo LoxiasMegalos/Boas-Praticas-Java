@@ -1,0 +1,62 @@
+Conhecendo os 5 principios e aplicando em um projeto - SOLID
+Boas práticas de programaçãoe orientação a objetos
+Código facil de manter e fácil de estender com o menor impacto possível
+
+Curso - projeto de RH com funcionarios + funções do salário
+
+Introdução:
+- Princípios da orientação a objetos
+- Coesão, Encapsulamento e Acoplamento
+
+Coesão  - harmonia entre elementos
+        - classe, atributos e métodos devem representar coisas em comum
+        - classe com muitos atributos diversos e métodos que fogem da ideia da classe -> sinal de baixa coesão
+        - classes não coesas - grandes demais, difícieis de manter, muitas linhas de código, difícil manutenção
+        - classe direcionada com função bem definida que realiza o necessário da maneira mais clara possível
+
+Encapsulamento - proteger / blindar uma classe contra atores externos, impedindo sua livre manipulação
+	- Getters e Setters muitas vezes nao sao necessários
+	- Capacidade de incluir validações no código para garantir que uma aplicação estará funcionando de maneira adequada
+	- Caso regras de negócio estejam sendo violadas - o encapsulamento de uma classe deve ser revisado
+
+Acoplamento - componentes interligados entre si onde ocorre dependencia
+	- Acoplamento está sempre presente - mas é sempre necessário avaliar a força dessa dependencia
+	- Quando há um alto acoplamento -> o código de uma determinada classe é muito utilizado e manipulado em outra classe
+	- Classes acopladas - fragilidade no código da aplicação, uma alteração em uma classe impacta no funcionamento de outras
+
+Ao seguir esses princípios da orientação a objetos - código mais simples e mais fácil de dar manutenção
+
+Classe Funcionario - representar o conceito de um funcionario no dominio da aplicação
+- Regra de negócio no reajuste salarial 
+- Vaidação realizada na própria classe de funcionário que poderia estar separado - aumentando a coesão
+- Refatoração para adicionar um serviço responsável por garantir uma funcionalidade extraída de um classe
+
+Single Responsibility Principle - Uma classe deveria ter apenas um único motivo para mudar.
+- Adições a funcionalidades do código não devem ser motivo de alterar funcionário
+- coesão no código garante que uma classe só será modificada quando houver uma necessidade de alterar sua representação.
+- ReajusteService passará a ser modificada sempre que uma nova regra de negócio entrar em vigor
+- coesão pode acarretar na perda de encapsulamento
+
+Coesão melhorada a partir da adição de uma classe externa de validação
+
+Nova regra de negócio - reajustes devem ser periodicos - mínimo de 6 meses até receber um novo reajuste
+
+Reajustes serçao tratados na ReajusteService
+- obter a data atual
+- obter a data do ultimo reajuste
+- verificar a diferença de meses a partir de ChronoUnit.Months.Betweeen
+
+Separar cada validação Unica em uma classe separada
+Classes com o mesmo metodo - interface - implementarao a classe mae
+Incluir no Service - List de ValidacaoReajuste e no metodo de reajustar salario utlizar um forEach passando por todas as validações possíveis com os parametros funcionario e aumento
+Qualquer nova validação que surgir é possível facilmente estender o código
+
+Princípio open-closed - aberto fechado
+Não há a necessidade de adicionar um novo código na mesma classe a cada nova regra de validação
+- Entidades de software deveriam estar sempre abertas para extensão, mas, fechadas para modificações
+- Modificando o código apenas quando há mudanças na regra de negócio
+
+Promover um funcionario - nova funcionalidade no sistema
+- classe PromocaoService
+- com a regra de negocio, impedir que o gerente seja promovido
+- a promoção estando ok, avaliar qual será o proximo cargo e alterar

@@ -40,5 +40,15 @@ public class Funcionario {
         this.dataUltimoReajuste = LocalDate.now();
     }
 
+    public LocalDate getDataUltimoReajuste() {
+        return dataUltimoReajuste;
+    }
 
+    public Cargo getCargo() {
+        return cargo;
+    }
+
+    public void promover(Cargo novoCargo) {
+        this.cargo = novoCargo;
+    }
 }
