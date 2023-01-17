@@ -1,0 +1,11 @@
+Padrão de projeto:
+
+- Solução comum para um problema recorrente em POO
+- Padrão estrutural para lidar com problemas de design da codificação em projetos
+
+23 padrões de projetos - 3 categorias
+- criacionais: padrões na criação de objetos
+- estruturais: estrtura e composição no relacionamento de classes
+- comportamentais: comportamentos, estado e interação entre objetos
+
+Padrões comportamentais mais comuns estudados para serem utilizados no dia a dia
