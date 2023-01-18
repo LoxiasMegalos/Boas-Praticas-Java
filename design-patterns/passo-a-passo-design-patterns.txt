@@ -18,5 +18,17 @@ Funcionalidade de cálculo de impostos
 	- toda a vez que um novo imposto surgir ou uma nova regra for adicionada -> classe crescerá indefinidamente
 
 Varias classes com o mesmo metodos mais diferentes implementações -> Interface
-Ao realizar o calculo, passar o orçamento e a classe do imposto que deseja que seja calculado
-Método Strategy - utilização do polimorfismo por meio de classes ou interfaces para aumentar a coesão, eliminar a necessidade de if & else, isolando as implementações de cada regra de negócio
+	- Ao realizar o calculo, passar o orçamento e a classe do imposto que deseja que seja calculado
+	- Método Strategy - utilização do polimorfismo por meio de classes ou interfaces para aumentar a coesão, eliminar a necessidade de if & else, isolando as implementações de cada regra de negócio
+
+Chain Responsibility - Implementação do cálculo de descontos para o cliente
+	- Desconto baseado no numero de itens comprados
+	- A cada nova regra de desconto um novo if deverá ser adicionado na Calculadora de descontos 
+	- Nesse caso a ordem importa, devendo percorrer todas as possibilidades dos laços de decisão
+	- Strategy apenas descolaria o bloco de decisão para outra classe
+1º passo separar cada tipo de desconto em uma class especifica
+2º ligar cada classe a outra em uma sequência de responsabilidades
+3º Criar uma classe sem proximo membro garantindo a parada da aplicação
+4º Garantindo que na classe de calculo só ocorrerá modificação quando novas regras de negócio forem adicionadas no processo
+
+Redirecionamento sequencial para proximas classes, garantindo que um pedido passará por todas as possibilidades de desconto
