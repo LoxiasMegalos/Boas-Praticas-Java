@@ -9,3 +9,14 @@ Padrão de projeto:
 - comportamentais: comportamentos, estado e interação entre objetos
 
 Padrões comportamentais mais comuns estudados para serem utilizados no dia a dia
+
+Projeto Loja e Orçamento
+
+Funcionalidade de cálculo de impostos
+	- Nova classe de calculo de impostos
+	- recebe um orçamento e devolve a quantidade de imposto em um valor BigDecimal
+	- toda a vez que um novo imposto surgir ou uma nova regra for adicionada -> classe crescerá indefinidamente
+
+Varias classes com o mesmo metodos mais diferentes implementações -> Interface
+Ao realizar o calculo, passar o orçamento e a classe do imposto que deseja que seja calculado
+Método Strategy - utilização do polimorfismo por meio de classes ou interfaces para aumentar a coesão, eliminar a necessidade de if & else, isolando as implementações de cada regra de negócio
