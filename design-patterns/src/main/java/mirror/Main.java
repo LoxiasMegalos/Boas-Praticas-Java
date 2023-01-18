@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {
-        Orcamento orcamento = new Orcamento(new BigDecimal("1000"), 1);
+        Orcamento orcamento = new Orcamento(new BigDecimal("100"), 5);
         CalcularImpostos calculadora = new CalcularImpostos();
         System.out.println(calculadora.calcularImpostos(orcamento, new ISS()));
         System.out.printf("%.2f\n",calculadora.calcularImpostos(orcamento, new ISS()));

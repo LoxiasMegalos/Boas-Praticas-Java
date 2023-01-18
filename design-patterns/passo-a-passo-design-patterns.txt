@@ -32,3 +32,9 @@ Chain Responsibility - Implementação do cálculo de descontos para o cliente
 4º Garantindo que na classe de calculo só ocorrerá modificação quando novas regras de negócio forem adicionadas no processo
 
 Redirecionamento sequencial para proximas classes, garantindo que um pedido passará por todas as possibilidades de desconto
+
+Template Method 
+	- Melhoria na chain of responsibility reorganizando o código para que não exista estrutura de decisões em cada classe especifica, apenas na mãe
+	- Classe mãe passa a ser a única responsável pelas decisões e as suas classes filhas apenas executam mediante a condição
+	- O padrão Template Method favorece o reaproveitamento de códigos comuns entre classes, evitando assim duplicações de códigos.
+	- Método de template que faz parte do processo mas com a lógica delegada para as classes filhas, não conhecendo as regras do funcionamento
