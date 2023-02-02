@@ -44,3 +44,12 @@ State
 	- Objeto deve estar capacitado a ter seu estado alterado
 	- Classe capaz de representar a situação mae de todas as outras situações
 	- Proxima situação sobreescrita nas classes possiveis e mantidas como exceptions na classe mae 
+	- Padrão irmão do strategy na ideia de reduzir quantidade de if else, mas baseado em um atributo de estado e suas transições
+
+Command 
+	- Orçamento finalizado - gerar pedido e executar algumas operações, enviar e-mail, salvar no banco de dados
+	- Desvincular codigo do mecanismo de apresentação - dados / execução
+	- Criar uma outra classe que possui os dados e a execução juntos, separando / escondendo da interação com o usuario
+	- Implements Command -> A partir do polimorfismo chama as classes que utilizam a interface e solicitam a execução
+	- Command Handler - Uma para os dados - Uma classe de execução com as dependencias
+	- Em cada parte do projeto que será utilizado este comando precisará instanciar ambas as classes, garantindo um código mais organizado e com menos repetição

@@ -2,8 +2,12 @@ import loja.desconto.CalculadoraDeDescontos;
 import loja.imposto.CalculadoraDeImpostos;
 import loja.imposto.ICMS;
 import loja.orcamento.Orcamento;
+import loja.pedido.GeraPedido;
+import loja.pedido.GeraPedidoHandler;
+import loja.pedido.Pedido;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -24,6 +28,13 @@ public class HelloWorld {
         System.out.println(orcamento52.calculaDescontoExtra());
         orcamento52.finalizar();
         System.out.println(orcamento52.calculaDescontoExtra());
-        orcamento52.reprovar();
+        //orcamento52.reprovar();
+
+        //Pedido pedido = new Pedido("Murillo", LocalDateTime.now(), orcamento2);
+        //System.out.println(pedido.getOrcamento().getSituacao());
+
+        GeraPedido gerador = new GeraPedido("Murillo", orcamento2.getValor(), orcamento2.getQuantidadeItens());
+        GeraPedidoHandler handler = new GeraPedidoHandler(/*Dependencias*/);
+        handler.execute(gerador);
     }
 }
