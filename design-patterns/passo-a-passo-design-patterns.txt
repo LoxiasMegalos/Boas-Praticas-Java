@@ -53,3 +53,29 @@ Command
 	- Implements Command -> A partir do polimorfismo chama as classes que utilizam a interface e solicitam a execução
 	- Command Handler - Uma para os dados - Uma classe de execução com as dependencias
 	- Em cada parte do projeto que será utilizado este comando precisará instanciar ambas as classes, garantindo um código mais organizado e com menos repetição
+
+Observer
+	- Logicas de execução de um command handler devem ser direcionadas para classes separadas
+	- Separar lógicas em classes diferentes de ações contendo as lógicas
+	- Número de dependencias crescerá constantemente para a classe handler a cada novo comando, a cada nova ação -> novo parametro no construtor
+	- Utilizando o polimorfismo - interface em comum em todas as acoes
+	- Construtor no Handler passando a lista de acoes
+	- No metodo executar passar por cada ação executando-as - acoes.forEach( a -> a.executarAcao(pedido));
+	- Na instanciação do Handler passar as acoes como: 
+		Arrays.asList(
+                        new SalvarPedidoNoBancoDeDados(),
+                        new EnviarEmailPedido()
+                )
+	- Evento com diversos ouvintes que estão observando e ao ocorrer, são notificados e executam suas funções - reagindo adequadamente, reduzindo o acoplamento
+
+Finalizando Design Patterns Comportamentais:
+	1 - Orçamento: 
+		Impostos diferentes utilizando Strategy
+	2 - Descontos:
+		Regras sequencias de possiveis descontos em um orçamento - Chain Resposibility
+		Template Method - reaproveitamento de código em codigos repetidos no chain responsibility
+	3 - Descontos Extras a partir de estados
+		Padrão State em objetos que possuem um atributo mutável dependendo de onde está no processo
+	4 - Pedido
+		Geração de um pedido e execução de funções -> Command
+		Separação de cada comando em classes diferentes que utilizam a mesma interface -> Observer, execução a cada novo evento

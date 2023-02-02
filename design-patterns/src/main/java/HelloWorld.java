@@ -5,9 +5,12 @@ import loja.orcamento.Orcamento;
 import loja.pedido.GeraPedido;
 import loja.pedido.GeraPedidoHandler;
 import loja.pedido.Pedido;
+import loja.pedido.acao.EnviarEmailPedido;
+import loja.pedido.acao.SalvarPedidoNoBancoDeDados;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -34,7 +37,12 @@ public class HelloWorld {
         //System.out.println(pedido.getOrcamento().getSituacao());
 
         GeraPedido gerador = new GeraPedido("Murillo", orcamento2.getValor(), orcamento2.getQuantidadeItens());
-        GeraPedidoHandler handler = new GeraPedidoHandler(/*Dependencias*/);
+        GeraPedidoHandler handler = new GeraPedidoHandler(
+                Arrays.asList(
+                        new SalvarPedidoNoBancoDeDados(),
+                        new EnviarEmailPedido()
+                )
+        );
         handler.execute(gerador);
     }
 }
