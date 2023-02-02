@@ -38,3 +38,9 @@ Template Method
 	- Classe mãe passa a ser a única responsável pelas decisões e as suas classes filhas apenas executam mediante a condição
 	- O padrão Template Method favorece o reaproveitamento de códigos comuns entre classes, evitando assim duplicações de códigos.
 	- Método de template que faz parte do processo mas com a lógica delegada para as classes filhas, não conhecendo as regras do funcionamento
+
+State
+	- Alterações pontuais em um objeto mediante a um estado especifico
+	- Objeto deve estar capacitado a ter seu estado alterado
+	- Classe capaz de representar a situação mae de todas as outras situações
+	- Proxima situação sobreescrita nas classes possiveis e mantidas como exceptions na classe mae 

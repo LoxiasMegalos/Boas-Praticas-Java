@@ -8,6 +8,9 @@ import mirror.orcamento.Orcamento;
 import java.math.BigDecimal;
 
 public class Main {
+    //Impostos - Strategy
+    //Descontos - Chain Responsibility e Template Method
+    //Desconto Extra - State
     public static void main(String[] args) {
         Orcamento orcamento = new Orcamento(new BigDecimal("100"), 5);
         CalcularImpostos calculadora = new CalcularImpostos();

@@ -17,5 +17,13 @@ public class HelloWorld {
         System.out.println(descontos.calcular(orcamento));
         System.out.println(descontos.calcular(orcamento2));
         System.out.println(descontos.calcular(orcamento3));
+
+        mirror.orcamento.Orcamento orcamento52 = new mirror.orcamento.Orcamento(new BigDecimal(100), 12);
+        System.out.println(orcamento52.calculaDescontoExtra());
+        orcamento52.aprovar();
+        System.out.println(orcamento52.calculaDescontoExtra());
+        orcamento52.finalizar();
+        System.out.println(orcamento52.calculaDescontoExtra());
+        orcamento52.reprovar();
     }
 }
